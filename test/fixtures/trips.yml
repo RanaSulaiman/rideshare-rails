@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  trip_id: MyString
+  integer: MyString
+  driver_id: MyString
+  integer: MyString
+  rider_id: MyString
+  integer: MyString
+  date: MyString
+  date: MyString
+  rating: MyString
+  integer: MyString
+  cost: MyString
+  float: MyString
+
+two:
+  trip_id: MyString
+  integer: MyString
+  driver_id: MyString
+  integer: MyString
+  rider_id: MyString
+  integer: MyString
+  date: MyString
+  date: MyString
+  rating: MyString
+  integer: MyString
+  cost: MyString
+  float: MyString
