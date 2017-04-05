@@ -8,7 +8,7 @@ class DriversController < ApplicationController
   end
 
   def new
-    @driver = driver.new
+    @driver = Driver.new
   end
 
   def edit
@@ -29,13 +29,17 @@ class DriversController < ApplicationController
   end
 
   def create
-    @driver = Driver.create book_params
+    @driver = Driver.create driver_params
     unless @driver.id == nil
-      redirect_to driver_path
+      redirect_to drivers_path
     else
       render "new"
     end
+  end
 
+  def destroy
+    Driver.destroy(params[:id])
+    redirect_to drivers_path
   end
 
   private
