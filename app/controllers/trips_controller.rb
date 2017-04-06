@@ -9,6 +9,7 @@ class TripsController < ApplicationController
 
   def new
     @trip = Trip.new
+    @trip.passenger_id = params[:passenger_id]
   end
 
   def edit
@@ -24,6 +25,7 @@ class TripsController < ApplicationController
 
   def create
     trip = Trip.create trip_params
+
     unless trip.id == nil
       redirect_to trips_path
     end
