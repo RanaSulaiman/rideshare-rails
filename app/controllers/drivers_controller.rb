@@ -42,6 +42,10 @@ class DriversController < ApplicationController
     redirect_to drivers_path
   end
 
+  def show_trips
+    @driver_trips = Trips.where(driver)
+  end
+
   private
 
   def driver_params

@@ -9,10 +9,12 @@ ID:
 <%= @result_driver.id %>
 
 </p>
+<p>
+
     <p>
       VIN: <%= @result_driver.vin %>
     </p>
-<%= link_to "Show Trips", , class: "link %>"
+
 <%= link_to "Edit Driver", edit_driver_path, class: "link" %>
 </p>
 <p>
@@ -21,3 +23,15 @@ data: { confirm: "Are you sure you want to delete this driver?"},
 method: :delete
  %>
 </p>
+
+<h3> Trips Driven</h3>
+  <ul> <% @result_driver.trips.each do |trip| %>
+    <li>
+      <%= trip.id %>
+      <%= trip.driver_id %>
+      <%= trip.passenger_id %>
+      <%= trip.date %>
+      <%= trip.rating %>
+    </li>
+    <% end %>
+  </ul>
