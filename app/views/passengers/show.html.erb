@@ -25,6 +25,8 @@
  <%= button_to "Update", edit_passenger_path(@passenger.id), method: :get %>
 
 <%= button_to "Delete", passenger_path(@passenger.id), method: :delete, data: {confirm: "Are you sure you want to delete this"} %>
+
+
 <p>
   <%= link_to " Home Page ", passengers_path %>
 </p>

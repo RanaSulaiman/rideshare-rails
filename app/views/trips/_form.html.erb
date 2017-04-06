@@ -1,0 +1,19 @@
+<%= form_for @trip do |f| %>
+  <%= f.label :driver_id %></br>
+  <%= f.text_field :driver_id %></br>
+
+  <%= f.label :passenger_id %></br>
+  <%= f.text_field :passenger_id %></br>
+
+  <%= f.label :date %></br>
+  <%= f.date_field :date %></br>
+
+  <%= f.label :rating %></br>
+  <%= f.text_field :rating %></br>
+
+  <%= f.label :cost %></br>
+  <%= f.text_field :cost %></br>
+
+
+  <%= f.submit %></br>
+<% end %>
