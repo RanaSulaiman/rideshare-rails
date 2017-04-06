@@ -3,10 +3,28 @@
   Passenger name <%= @passenger.name  %></br>
   Passenger phone number <%= @passenger.phone_num %></br>
 </p>
-
+<% total = 0.0 %>
+<table>
+  <tr>
+    <th>
+     Trip Date
+    </th>
+    <th>
+    Trip Cost
+    </th>
+  </tr>
  <% @passenger.trips.each do |trip|%>
- <p> <%= link_to trip.date, trip_path(trip.id),  method: :get %> </p>
+ <% total += trip.cost %>
+ <tr>
+ <td> <%= link_to trip.date, trip_path(trip.id),  method: :get %> </td> <td>$<%= trip.cost %></td>
+ </tr>
  <% end %>
+ </table>
+ </br>Total Cost:  $<%= total %>
+
+ <%= button_to "Update", edit_passenger_path(@passenger.id), method: :get %>
+
+<%= button_to "Delete", passenger_path(@passenger.id), method: :delete, data: {confirm: "Are you sure you want to delete this"} %>
 <p>
   <%= link_to " Home Page ", passengers_path %>
 </p>
