@@ -23,12 +23,17 @@ class PassengersController < ApplicationController
   end
 
   def create
-  passenger = Passenger.create passenger_params
+    passenger = Passenger.create passenger_params
+    unless passenger.id == nil
+      redirect_to passengers_path
+    end
+  end
 
-  unless passenger.id == nil
+  def destroy
+    Passenger.destroy(params[:id])
     redirect_to passengers_path
   end
-  end
+
 
 
   private
