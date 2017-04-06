@@ -1,10 +1,12 @@
 <h1>About Passenger</h1>
-
 <p>
   Passenger name <%= @passenger.name  %></br>
   Passenger phone number <%= @passenger.phone_num %></br>
 </p>
 
+ <% @passenger.trips.each do |trip|%>
+ <p> <%= link_to trip.date, trip_path(trip.id),  method: :get %> </p>
+ <% end %>
 <p>
   <%= link_to " Home Page ", passengers_path %>
 </p>

@@ -1,18 +1,39 @@
 
 
-<h1>Welcome to Passenger List</h1>
-<p>
-  <ul>
+<h1>Welcome to Passengers List</h1>
+
+<table>
+  <tr>
+    <th>
+    ID
+    </th>
+    <th>
+     Name
+    </th>
+    <th>
+  Phone NO.
+    </th>
+    <th>
+
+    </th>
+
+    <th>
+
+    </th>
+  </tr>
+
     <% @passengers.each do |passenger| %>
-    <li>
-      <%= passenger.id %>
-      <%= link_to passenger.name, passenger_path(passenger.id) %>
-      <%= passenger.phone_num %>
+   <tr>
+    <td><%= passenger.id %></td>
+      <td><%= link_to passenger.name, passenger_path(passenger.id) %></td>
+      <td><%= passenger.phone_num %></td>
 
-      <li> <%= button_to "Update", edit_passenger_path(passenger.id), method: :get %></li>
+      <td> <%= button_to "Update", edit_passenger_path(passenger.id), method: :get %></td>
 
-      <li> <%= button_to "Delete", passenger_path(passenger.id), method: :delete, data: {confirm: "Are you sure you want to delete this"} %></li>
-
+      <td> <%= button_to "Delete", passenger_path(passenger.id), method: :delete, data: {confirm: "Are you sure you want to delete this"} %></td></tr>
     <% end %>
-  </ul>
+  </table>
+
+  <p >
+<%= link_to "Create New Passenger", new_passenger_path %>
 </p>
