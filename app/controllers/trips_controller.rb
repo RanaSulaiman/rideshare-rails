@@ -36,10 +36,6 @@ class TripsController < ApplicationController
     end
   end
 
-  # def new
-  # rider= Rider.find(params[:rider_id])
-  #   @trip = rider.trips.build
-  # end
 
 
   private

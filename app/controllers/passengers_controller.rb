@@ -1,6 +1,6 @@
 class PassengersController < ApplicationController
   def index
-    @passengers = Passenger.all
+    @passengers = Passenger.all.sort {|d1, d2| d1.id <=> d2.id}
   end
 
   def show
