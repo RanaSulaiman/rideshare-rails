@@ -32,7 +32,6 @@ class TripsController < ApplicationController
     # passenger = Passenger.find(params[:id])
 
     # if passenger.all_trips_rated?
-      Passenger.find(params[:id]).trips
       @trip = Trip.create trip_params
 
       unless @trip.id == nil
