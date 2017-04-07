@@ -8,3 +8,7 @@
 
   Passenger name: <%= @trip.passenger.name %></br>
 </p>
+
+<%= button_to "Update", edit_trip_path(@trip.id), method: :get %>
+
+<%= button_to "Delete", trip_path(@trip.id), method: :delete, data: {confirm: "Are you sure you want to delete this trip?"} %>

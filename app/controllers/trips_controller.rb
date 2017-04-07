@@ -24,7 +24,7 @@ class TripsController < ApplicationController
   def update
     trip = Trip.find(params[:id])
     if trip.update(trip_params)
-      redirect_to trips_path
+      redirect_to trip_path(params[:id])
     end
   end
 
