@@ -8,13 +8,23 @@ class TripsController < ApplicationController
   end
 
   def new
-    @trip = Trip.new
-    @trip.passenger_id = params[:passenger_id]
+    passenger = Passenger.find(params[:passenger_id])
 
-    begin
-      driver = Driver.all.sample #(Driver.order("RANDOM()"))[0]
-    end until driver.status.downcase == "available"
-    @trip.driver_id = driver.id
+    if passenger.all_trips_rated?
+
+      @trip = Trip.new
+      @trip.passenger_id = params[:passenger_id]
+
+      begin
+        driver = Driver.all.sample #(Driver.order("RANDOM()"))[0]
+      end until driver.status.downcase == "available"
+      @trip.driver_id = driver.id
+    else
+      trip = Trip.find_by(rating: nil, passenger_id: passenger.id)
+      flash.keep
+      redirect_to edit_trip_path(trip.id), :flash => { :error => "Can not Create New Trip, Please rate the previous trip" }
+
+    end
   end
 
   def edit
