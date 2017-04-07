@@ -7,9 +7,31 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <nav>
+
+    <div class="dropdown">
+      <button class="dropbtn">Drivers</button>
+      <div class="dropdown-content">
+        <a href="#">View All</a>
+        <a href="#">Create New</a>
+      </div>
+    </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Passengers</button>
+      <div class="dropdown-content">
+        <a href="#">View All</a>
+        <a href="#">Create New</a>
+      </div>
+    </div>
+
+  
+
+
+  </na>
 
   <body>
-    TESTING
+
     <%= yield %>
 
   </body>

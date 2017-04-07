@@ -1,14 +1,38 @@
-<p>
 
-  <ul>
+<h1>Welcome to Drivers List</h1>
+<section>
+  <%= link_to "Add new Driver", new_driver_path, class: "link" %>
+</section>
+
+
+<table>
+  <tr>
+    <th>
+    ID
+    </th>
+    <th>
+     Name
+    </th>
+    <th>
+     Vin
+    </th>
+    <th>
+
+    </th>
+
+    <th>
+
+    </th>
+  </tr>
+
     <% @drivers.each do |driver| %>
-    <li>
-      <%= driver.id %>
-      <%= link_to driver.name, driver_path(driver.id) %>
-      <%= driver.vin %>
-    </li>
-    <% end %>
-  </ul>
-</p>
+   <tr>
+    <td><%= driver.id %></td>
+      <td><%= link_to driver.name, driver_path(driver.id) %></td>
+      <td><%= driver.vin %></td>
 
-<%= link_to "Add new Driver", new_driver_path, class: "link" %>
+      <td> <%= button_to "Update", edit_driver_path(driver.id), method: :get %></td>
+
+      <td> <%= button_to "Delete", driver_path(driver.id), method: :delete, data: {confirm: "Are you sure you want to delete this driver?"} %></td></tr>
+    <% end %>
+  </table>
