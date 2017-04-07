@@ -11,8 +11,10 @@ class TripsController < ApplicationController
     @trip = Trip.new
     @trip.passenger_id = params[:passenger_id]
 
-    @trip.driver_id =  Driver.order("RANDOM()").limit(1)
-
+    begin
+      driver = Driver.all.sample #(Driver.order("RANDOM()"))[0]
+    end until driver.status.downcase == "available"
+    @trip.driver_id = driver.id
   end
 
   def edit
