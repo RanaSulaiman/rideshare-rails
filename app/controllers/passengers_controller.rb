@@ -29,13 +29,6 @@ class PassengersController < ApplicationController
     end
   end
 
-  def trp_passanger
-    @passenger = Passenger.find(params[:id])
-
-    
-
-
-  end
 
   def destroy
     Passenger.destroy(params[:id])

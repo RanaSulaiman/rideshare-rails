@@ -10,6 +10,9 @@ class TripsController < ApplicationController
   def new
     @trip = Trip.new
     @trip.passenger_id = params[:passenger_id]
+
+    @trip.driver_id =  Driver.order("RANDOM()").limit(1)
+
   end
 
   def edit
@@ -24,9 +27,9 @@ class TripsController < ApplicationController
   end
 
   def create
-    trip = Trip.create trip_params
+    @trip = Trip.create trip_params
 
-    unless trip.id == nil
+    unless @trip.id == nil
       redirect_to trips_path
     end
   end
