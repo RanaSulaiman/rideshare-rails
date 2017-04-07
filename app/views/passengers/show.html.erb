@@ -22,7 +22,8 @@
      <td><%= trip.rating %></td>
    </tr>
  <% end %>
- </table>
+ </table>All trips rated?  <%= @passenger.all_trips_rated? %>
+ </br>
  </br>Total Cost:  $<%= @passenger.all_trips_cost %>
 
  <%= button_to "Update", edit_passenger_path(@passenger.id), method: :get %>

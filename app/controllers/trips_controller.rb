@@ -29,11 +29,18 @@ class TripsController < ApplicationController
   end
 
   def create
-    @trip = Trip.create trip_params
+    # passenger = Passenger.find(params[:id])
 
-    unless @trip.id == nil
-      redirect_to trips_path
-    end
+    # if passenger.all_trips_rated?
+      Passenger.find(params[:id]).trips
+      @trip = Trip.create trip_params
+
+      unless @trip.id == nil
+        redirect_to trips_path
+      end
+    # else
+    #   redirect_to passenger_path(passenger.id)
+    # end
   end
 
 
