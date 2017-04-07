@@ -1,15 +1,40 @@
-<p>
 
-  <ul>
+<h1>Trips List</h1>
+
+<table>
+    <tr>
+      <th>
+      Trip ID
+      </th>
+      <th>
+       Driver ID
+      </th>
+      <th>
+      Rider ID
+      </th>
+      <th>
+        Date
+      </th>
+      <th>
+        Rating
+      </th>
+      <th>
+      Cost
+      </th>
+
+    </tr>
+
+
     <% @trips.each do |trip| %>
-    <li>
 
-      <%= link_to trip.id, trip_path(trip.id) %>
-      <%= trip.driver_id %>
-      <%= trip.passenger_id %>
+  <tr>
+    <td><%= link_to trip.id, trip_path(trip.id) %></td>
+    <td><%= link_to trip.driver_id, driver_path(trip.driver_id) %> </td>
 
+    <td><%= link_to trip.passenger_id, passenger_path(trip.passenger_id)%></td>
+  <td><%= trip.date %></td>
+  <td><%= trip.rating %></td>
+  <td><%= trip.cost %></td></tr>
 
-    </li>
     <% end %>
-  </ul>
-</p>
+  </table>
