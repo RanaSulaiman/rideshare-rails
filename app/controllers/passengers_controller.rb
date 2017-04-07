@@ -19,6 +19,8 @@ class PassengersController < ApplicationController
     passenger = Passenger.find(params[:id])
     if passenger.update(passenger_params)
       redirect_to passengers_path
+    else
+      render "edit"
     end
   end
 
@@ -28,7 +30,6 @@ class PassengersController < ApplicationController
       redirect_to passengers_path
     end
   end
-
 
   def destroy
     Passenger.destroy(params[:id])
