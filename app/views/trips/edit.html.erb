@@ -1,9 +1,8 @@
-<h1>Edit Trip </h1>
-Trip Id :<%= @trip.id %></br></br>
+<h1>Edit Trip #<%= @trip.id %></h1>
 <% flash.each do |key, value| %>
 <div><%= value %></div>
 <% end %>
 <p>
-  
+
 </p>
 <%= render partial: "form" %>

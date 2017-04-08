@@ -1,12 +1,12 @@
 <h1>About Trip</h1>
 
 <p>
-  Trip id: <%= @trip.id  %></br>
-  Driver id: <%= @trip.driver_id %></br>
-  Driver name: <%= @trip.driver.name %></br>
+  Trip ID: <%= @trip.id  %></br>
+  Driver ID: <%= @trip.driver_id %></br>
+  Driver Name: <%= @trip.driver.name %></br>
+  Passenger Name: <%= @trip.passenger.name %></br>
   Trip Rating: <%= @trip.rating %></br>
-
-  Passenger name: <%= @trip.passenger.name %></br>
+  Trip Cost: <%= number_to_currency(@trip.cost) %></br>
 </p>
 
 <%= button_to "Update", edit_trip_path(@trip.id), method: :get %>

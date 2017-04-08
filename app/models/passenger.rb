@@ -26,7 +26,7 @@ class Passenger < ApplicationRecord
         total += trip.cost
       end
     end
-    return total
+    return total.to_f.round(2)
   end
 
 

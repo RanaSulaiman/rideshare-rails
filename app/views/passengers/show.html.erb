@@ -1,8 +1,8 @@
-<h1>About Passenger</h1>
+<h1>About Passenger # <%= @passenger.id %></h1>
 <p>
   Passenger name <%= @passenger.name  %></br>
   Passenger phone number <%= @passenger.phone_num %></br>
-  Total Spent:  $<%= @passenger.all_trips_cost %>
+  Total Spent:  <%= number_to_currency(@passenger.all_trips_cost) %>
 </p>
 <%= button_to "Update Passenger", edit_passenger_path(@passenger.id), method: :get %>
 <%= button_to "Delete Passenger", passenger_path(@passenger.id), method: :delete, data: {confirm: "Are you sure you want to delete this"} %>
@@ -26,7 +26,7 @@
    <tr>
      <td><%= link_to trip.id, trip_path(trip.id), method: :get %></td>
      <td> <%= trip.date %> </td>
-     <td>$<%= trip.cost %></td>
+     <td><%= number_to_currency(trip.cost) %></td>
      <td><%= trip.rating %></td>
    </tr>
  <% end %>

@@ -14,7 +14,7 @@ ID:
       VIN: <%= @result_driver.vin %>
     </p>
     <p>
-      Total Earnings:  $<%= @result_driver.all_trips_cost %>
+      Total Earnings:  <%= number_to_currency(@result_driver.all_trips_cost) %>
     </p>
 
     <%= link_to "Update Driver", edit_driver_path(@result_driver.id), method: :get %>
@@ -46,7 +46,7 @@ ID:
        <td><%= trip.driver_id %></td>
        <td><%= trip.passenger_id %></td>
        <td> <%= link_to trip.date, trip_path(trip.id),  method: :get %> </td>
-       <td>$<%= trip.cost %></td>
+       <td><%= number_to_currency(trip.cost) %></td>
        <td><%= trip.rating %></td>
      </tr>
    <% end %>
