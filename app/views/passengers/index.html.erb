@@ -32,7 +32,7 @@
       <td><%= link_to passenger.name, passenger_path(passenger.id) %></td>
       <td><%= passenger.phone_num %></td>
 
-      <td> <%= button_to "Update", edit_passenger_path(passenger.id), method: :get %></td>
+      <td> <%= button_to "Edit", edit_passenger_path(passenger.id), method: :get %></td>
 
       <td> <%= button_to "Delete", passenger_path(passenger.id), method: :delete, data: {confirm: "Are you sure you want to delete this"} %></td></tr>
     <% end %>

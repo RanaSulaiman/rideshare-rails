@@ -13,6 +13,18 @@ class Driver < ApplicationRecord
         total += trip.cost
       end
     end
-    return total
+    return total * 0.85
+  end
+
+  def avg_rating
+    total = 0
+    num_of_ratings = 0
+    self.trips.each do |trip|
+      if trip.rating != nil
+        total += trip.rating
+        num_of_ratings += 1
+      end
+    end
+    return (total/num_of_ratings.to_f).round(1)
   end
 end

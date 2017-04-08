@@ -9,7 +9,7 @@
   <%= f.date_field :date %></br>
 
   <%= f.label :rating %></br>
-  <%= f.text_field :rating %></br>
+  <%= f.select :rating, (1..5), include_blank: true %></br>
 
   <%= f.label :cost %></br>
   <%= f.text_field :cost %></br>

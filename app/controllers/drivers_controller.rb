@@ -24,8 +24,6 @@ class DriversController < ApplicationController
     else
       render "edit"
     end
-
-
   end
 
   def create

@@ -14,6 +14,9 @@ ID:
       VIN: <%= @result_driver.vin %>
     </p>
     <p>
+      Average Rating:  <%= @result_driver.avg_rating %>
+    </p>
+    <p>
       Total Earnings:  <%= number_to_currency(@result_driver.all_trips_cost) %>
     </p>
 
