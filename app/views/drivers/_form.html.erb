@@ -1,20 +1,19 @@
 <ul>
-
   <% @driver.errors.each do |field, message| %>
   <li>
-    <%= field %><%= message %>
+    <%= field %> <%= message %>
   </li>
   <% end %>
 </ul>
 
-<%= form_for @driver, method: form_method do |f| %>
+<%= form_for @driver do |f| %>
 
-<%= f.label :name %>
-<%= f.text_field :name %>
+<%= f.label :name %></br>
+<%= f.text_field :name %></br>
 
-<%= f.label :vin %>
-<%= f.text_field :vin %>
+<%= f.label :vin %></br>
+<%= f.text_field :vin %></br>
 
-<%= f.submit action_name %>
+<%= f.submit action_name %></br>
 
 <% end %>

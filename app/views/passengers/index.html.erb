@@ -1,6 +1,10 @@
 
 
 <h1>Welcome to Passengers List</h1>
+<p >
+<%= link_to "Add New Passenger", new_passenger_path %>
+</p>
+
 
 <table>
   <tr>
@@ -33,7 +37,3 @@
       <td> <%= button_to "Delete", passenger_path(passenger.id), method: :delete, data: {confirm: "Are you sure you want to delete this"} %></td></tr>
     <% end %>
   </table>
-
-  <p >
-<%= link_to "Create New Passenger", new_passenger_path %>
-</p>

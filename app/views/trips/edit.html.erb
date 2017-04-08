@@ -1,9 +1,2 @@
 <h1>Edit Trip </h1>
-
-Trip Id :<%= @trip.id %></br></br>
-
-<% flash.each do |key, value| %>
-
-        <div><%= key %>"><%= value %></div>
-      <% end %>
 <%= render partial: "form" %>

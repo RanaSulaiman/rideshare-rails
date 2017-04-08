@@ -1,4 +1,13 @@
+<ul>
+  <% @passenger.errors.each do |field, message| %>
+  <li>
+    <%= field %> <%= message %>
+  </li>
+  <% end %>
+</ul>
+
 <%= form_for @passenger do |f| %>
+
   <%= f.label :name %></br>
   <%= f.text_field :name %></br>
 
@@ -6,4 +15,5 @@
   <%= f.text_field :phone_num %></br>
 
   <%= f.submit %></br>
+  
 <% end %>

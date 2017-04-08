@@ -1,6 +1,8 @@
 class Passenger < ApplicationRecord
   has_many :trips
   has_many :drivers, :through => :trips
+  validates :name, presence: true
+  validates :phone_num, presence: true
 
 
   def show_trips
@@ -10,7 +12,7 @@ class Passenger < ApplicationRecord
 
   def all_trips_rated?
     self.trips.each do |trip|
-      if trip.rating == nil
+      if trip.rating == nil || trip.rating == ""
         return false
       end
     end

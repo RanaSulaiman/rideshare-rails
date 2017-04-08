@@ -2,14 +2,21 @@
 <p>
   Passenger name <%= @passenger.name  %></br>
   Passenger phone number <%= @passenger.phone_num %></br>
+  Total Spent:  $<%= @passenger.all_trips_cost %>
 </p>
+<%= button_to "Update Passenger", edit_passenger_path(@passenger.id), method: :get %>
+<%= button_to "Delete Passenger", passenger_path(@passenger.id), method: :delete, data: {confirm: "Are you sure you want to delete this"} %>
+<%= button_to "Add New Trip", new_trip_path(@passenger.id), method: :get %>
 <table>
   <tr>
     <th>
-     Trip Date
+     Trip ID
     </th>
     <th>
-    Trip Cost
+      Date
+    </th>
+    <th>
+     Cost
     </th>
     <th>
     Rating
@@ -17,20 +24,16 @@
   </tr>
  <% @passenger.trips.each do |trip|%>
    <tr>
-     <td> <%= link_to trip.date, trip_path(trip.id),  method: :get %> </td>
+     <td><%= link_to trip.id, trip_path(trip.id), method: :get %></td>
+     <td> <%= trip.date %> </td>
      <td>$<%= trip.cost %></td>
      <td><%= trip.rating %></td>
    </tr>
  <% end %>
  </table>All trips rated?  <%= @passenger.all_trips_rated? %>
  </br>
- </br>Total Cost:  $<%= @passenger.all_trips_cost %>
 
- <%= button_to "Update", edit_passenger_path(@passenger.id), method: :get %>
 
-<%= button_to "Delete", passenger_path(@passenger.id), method: :delete, data: {confirm: "Are you sure you want to delete this"} %>
-
-<%= button_to "Add New Trip", new_trip_path(@passenger.id), method: :get %>
 
 
 
