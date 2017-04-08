@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'rideshare/index'
+
   resources :drivers
   resources :passengers
   resources :trips, except: [:new, :create]
