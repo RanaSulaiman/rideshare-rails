@@ -2,4 +2,5 @@
 
 <%= render partial: "form", locals: { action_name: "Edit", form_method: :put }%>
 
-<%= link_to "Back to list", drivers_path, class: "link" %>
+<%= link_to "Back to Driver Info", driver_path(@driver.id), method: :get %></br>
+<%= link_to "Back to Driver List", drivers_path, method: :get %>

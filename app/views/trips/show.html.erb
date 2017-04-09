@@ -1,19 +1,19 @@
 <h1>About Trip</h1>
 
 <p>
-  Trip ID: <%= @trip.id  %></br>
-  Driver ID: <%= @trip.driver_id %></br>
+  Trip ID: <%= @trip.id %></br>
+  Driver ID: <%= link_to @trip.driver_id, driver_path(@trip.driver_id), method: :get%></br>
   Driver Name: <%= @trip.driver.name %></br>
   Passenger Name: <%= @trip.passenger.name %></br>
   Trip Rating: <%= @trip.rating %></br>
   Trip Cost: <%= number_to_currency(@trip.cost) %></br>
 </p>
 
-<%= button_to "Update", edit_trip_path(@trip.id), method: :get %>
+<%= button_to "Update Trip", edit_trip_path(@trip.id), method: :get %>
 
-<%= button_to "Delete", trip_path(@trip.id), method: :delete, data: {confirm: "Are you sure you want to delete this trip?"} %>
+<%= button_to "Delete Trip", trip_path(@trip.id), method: :delete, data: {confirm: "Are you sure you want to delete this trip?"} %>
 
 
-<%= button_to "Create New Trip", new_trip_path(@trip.passenger.id), method: :get %>
+<%= button_to "New Trip", new_trip_path(@trip.passenger.id), method: :get %>
 
 <%= link_to "Back to Trip List", trips_path, class: "link" %>
