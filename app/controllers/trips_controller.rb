@@ -36,7 +36,7 @@ class TripsController < ApplicationController
   def create
     @trip = Trip.create trip_params
     unless @trip.id == nil
-      redirect_to trips_path
+      redirect_to passenger_path(trip_params[:passenger_id])
     end
   end
 

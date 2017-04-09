@@ -1,3 +1,27 @@
 // Place all the styles related to the Rideshare controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+h1 {
+  text-align: center;
+}
+
+.icon a img {
+  height: 100px;
+}
+
+nav {
+  background-color: green;
+  clear: both;
+  height: 3em;
+}
+
+td.icon {
+  width: 150em;
+  text-align: center;
+  padding-top: 3em;
+}
+
+td.link {
+  width: 150em;
+  text-align: center;
+}
