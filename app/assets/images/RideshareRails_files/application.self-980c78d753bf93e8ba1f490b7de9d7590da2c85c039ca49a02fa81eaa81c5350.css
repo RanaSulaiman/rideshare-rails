@@ -10,10 +10,11 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+
+
  */
  /* Dropdown Button */
+
 
  header {
    background-color: #a99ed8;
@@ -97,7 +98,7 @@ body {
 
   text-align: center;
   background-color: #e3e2f9;
-  padding-bottom: 10em;
+  padding-bottom: 100em;
   height: 100%;
 
 }
@@ -110,14 +111,11 @@ body {
 table {
   margin-left:auto;
   margin-right:auto;
-  padding-bottom: 5em;
 }
 
-
 footer {
-    position:absolute;
+  position:absolute;
     bottom:0;
     width:100%;
-    height: 3em;
-    vertical-align: bottom;
+    height:60px;
 }

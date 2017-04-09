@@ -1,0 +1,22 @@
+/* line 4, /Users/kellysouza/Documents/ada/projects/rails/rideshare-rails/app/assets/stylesheets/rideshare.scss */
+h1 {
+  text-align: center;
+}
+
+/* line 8, /Users/kellysouza/Documents/ada/projects/rails/rideshare-rails/app/assets/stylesheets/rideshare.scss */
+.icon a img {
+  height: 100px;
+}
+
+/* line 15, /Users/kellysouza/Documents/ada/projects/rails/rideshare-rails/app/assets/stylesheets/rideshare.scss */
+td.icon {
+  width: 150em;
+  text-align: center;
+  padding-top: 3em;
+}
+
+/* line 25, /Users/kellysouza/Documents/ada/projects/rails/rideshare-rails/app/assets/stylesheets/rideshare.scss */
+td.link {
+  width: 150em;
+  text-align: center;
+}
