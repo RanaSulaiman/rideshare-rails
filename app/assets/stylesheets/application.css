@@ -21,6 +21,10 @@
    color: white;
  }
 
+ img:hover {
+   box-shadow: 3px 3px 10px 5px #a99ed8;
+ }
+
  header h1 {
    font-size: 3em;
    margin: 0px;
@@ -30,6 +34,14 @@
    text-align: center;
  }
 
+input  {
+  background-color: #f9f9ff;
+  border-radius: 5px;
+}
+
+input:hover {
+  background-color: #bbb1e7;
+}
 
  nav div button.dropbtn {
      background-color: #a99ed8;
