@@ -1,6 +1,6 @@
 class TripsController < ApplicationController
   def index
-    @trips = Trip.all
+    @trips = Trip.all.sort {|v1, v2| v2.id <=> v1.id}
   end
 
   def show

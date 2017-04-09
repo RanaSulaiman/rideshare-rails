@@ -22,7 +22,7 @@
     Rating
     </th>
   </tr>
- <% @passenger.trips.each do |trip|%>
+ <% (@passenger.trips.sort {|t1, t2| t2.id <=> t1.id}).each do |trip|%>
    <tr>
      <td><%= link_to trip.id, trip_path(trip.id), method: :get %></td>
      <td> <%= trip.date %> </td>

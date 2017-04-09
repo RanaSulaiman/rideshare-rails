@@ -1,6 +1,6 @@
 class DriversController < ApplicationController
   def index
-    @drivers = Driver.all
+    @drivers = Driver.all.sort {|d1, d2| d1.id <=> d2.id}
   end
 
   def show

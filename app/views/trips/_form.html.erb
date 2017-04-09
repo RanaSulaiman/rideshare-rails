@@ -6,7 +6,7 @@
   <%= f.text_field :passenger_id %></br>
 
   <%= f.label :date %></br>
-  <%= f.date_field :date %></br>
+  <%= f.date_field :date, :value => Date.current %></br>
 
   <%= f.label :rating %></br>
   <%= f.select :rating, (1..5), include_blank: true %></br>
