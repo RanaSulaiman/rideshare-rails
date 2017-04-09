@@ -8,6 +8,8 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
   </head>
+  <header>
+    <h1>RideShare</h1>
   <nav>
     <div class="dropdown">
       <button class="dropbtn"><%= link_to "Home", rideshare_index_path %></button>
@@ -28,7 +30,7 @@
         <%= link_to "Create New", new_passenger_path %>
       </div>
     </div>
-
+  </header>
 
 
 
@@ -39,4 +41,6 @@
     <%= yield %>
 
   </body>
+
+  <footer>&copy; 2017 Rana & Kelly</footer>
 </html>
