@@ -19,7 +19,7 @@ end
 CSV.read("support/trips.csv", {:headers => true}).each do |trip|
   args = {
           :driver_id => trip[1],
-          :rider_id => trip[2],
+          :passenger_id => trip[2],
           :date => trip[3],
           :rating => trip[4]
         }
