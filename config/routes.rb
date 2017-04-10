@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  root 'rideshare#index'
   get 'rideshare/index'
 
   resources :drivers
